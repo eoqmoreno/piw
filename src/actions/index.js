@@ -9,11 +9,13 @@ export const fetchPostSucesso = createAction("FETCH_POST_SUCESSO");
 
 export const fetchPosts = () => {
     return(dispatch, getState) => {
+        console.log("antes de disparar o fetchPostIniciado");
         dispatch(fetchPostIniciado());
         axios({
             method:"GET",
             url: url,
         }).then(response => {
+            console.log("antes de disparar o fetchPostSucesso");
             dispatch(fetchPostSucesso(response.data));
         })
     }
@@ -31,18 +33,20 @@ export const addPost = (nome, msg) => {
             url: url,
             data: post,
         }).then(response => {
-            console.log("add")
+            console.log("add");
+            dispatch(fetchPosts());
         })
     }
 }
 
-export const removePost = (id) => {
+export const excluirPost = (id) => {
     return(dispatch, getState) => {
         axios({
             method:"DELETE",
             url: url + id,
         }).then(response => {
-            console.log("remove")
+            console.log("remove");
+            dispatch(fetchPosts());
         })
     }
 }
@@ -54,7 +58,9 @@ export const darLike = (post) => {
             url: url + post.id,
             data: post
         }).then(response => {
-            console.log("like")
+            console.log("like");
+            dispatch(fetchPosts());
+
         })
     }
 }

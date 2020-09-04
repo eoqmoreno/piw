@@ -7,20 +7,20 @@ import { fetchPosts } from '../../actions';
 class Galeria extends React.Component {
     constructor(props) {
         super(props);
-        this.posts = this.props.posts;
     }
     recebeuLike = (id) =>{
         console.log(id);
     }
-
+    
     componentDidMount = () => {
         this.props.fetchPosts();
     }
     
     render() { 
+        console.log(this.props.posts);
         let lista = [];
-        if (this.posts != null) {
-            lista = this.posts.map(
+        if (this.props.posts != null) {
+            lista = this.props.posts.map(
                 (post) => (
                     <Post nome={post.nome} i={post.id} msg={post.msg} likes={post.qtdLikes} fun={this.recebeuLike}></Post>
                 )
@@ -41,6 +41,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchPosts: () =>{
             dispatch(fetchPosts());
+            console.log("fetch(galeria)");
         }
     }
 }

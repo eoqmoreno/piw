@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import '../css/post.css';
-import { removePost, darLike } from '../actions';
+import { excluirPost, darLike } from '../actions';
 import { connect } from 'react-redux';
 
 
@@ -18,7 +18,7 @@ class Post extends React.Component {
         }
         this.msg = this.props.msg;
 
-        this.removePost = this.props.removePost;
+        this.excluirPost = this.props.excluirPost;
         this.darLike = this.props.darLike;
     }
 
@@ -34,7 +34,7 @@ class Post extends React.Component {
     };
 
     remover = () => {
-        this.removePost(this.id);
+        this.excluirPost(this.id);
     }
 
     darLikes = () => {
@@ -66,8 +66,8 @@ class Post extends React.Component {
 
 function mapDispatchToProps(dispatch){
     return{
-        removePost: (id) => {
-            dispatch(removePost(id))
+        excluirPost: (id) => {
+            dispatch(excluirPost(id))
         },
         darLike: (post) => {
             dispatch(darLike(post))
