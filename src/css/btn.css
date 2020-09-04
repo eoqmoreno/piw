@@ -1,0 +1,11 @@
+.btn{
+    border: 0;
+    border-bottom: 1px solid black;
+    font-size: 100%;
+    background: none;
+    font-family: cursive;
+}
+
+.btn:hover{
+    font-weight: bold;
+}

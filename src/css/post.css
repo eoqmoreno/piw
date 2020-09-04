@@ -1,0 +1,16 @@
+#nomePessoa{
+    float: right;
+    position: relative;
+    top: 30px;
+    right: 10px;
+
+}
+
+.post{
+    width: 20%;
+    margin: 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1%;
+    display: inline-block
+}

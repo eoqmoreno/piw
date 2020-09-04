@@ -1,0 +1,8 @@
+body{
+    font-family: cursive;
+}
+
+.destaque{
+    color: gold;
+    -webkit-text-stroke: 0.3px black; 
+}

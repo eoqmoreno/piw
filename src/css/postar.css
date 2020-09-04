@@ -1,0 +1,15 @@
+form{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1%;
+    width: 25%;
+    margin: auto;
+}
+textarea{
+    width: 100%;
+}
+input[type=text]{
+    width: 100%;
+    border:none;
+    border-bottom: 1px solid black;
+}
